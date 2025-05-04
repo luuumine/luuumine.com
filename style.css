@@ -1,0 +1,238 @@
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* BASE STYLES */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* PROFILE SECTION */
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__pic-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#socials-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  height: 3rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 10rem;
+  border-radius: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1 {
+  background: white;
+  color: black;
+}
+
+.btn-color-1:hover {
+  background: dimgrey;
+  color: white;
+}
+
+.btn-color-2 {
+  background: dimgrey;
+  color: white;
+}
+
+.btn-color-2:hover {
+  background: black;
+}
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  #profile {
+    display: block;
+    height: auto;
+    margin: 10vh 5% 4rem;
+  }
+
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  .section__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn-container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #profile {
+    display: block;
+    height: auto;
+    margin: 10vh 5% 4rem;
+  }
+
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  .section__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn-container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0 2%;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .section__pic-container {
+    width: 36vw;
+    height: 36vw;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0rem;
+  }
+
+  .section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .p2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem;
+    width: 90%;
+    max-width: 240px;
+    font-size: 0.875rem;
+  }
+}
