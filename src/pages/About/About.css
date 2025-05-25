@@ -1,0 +1,77 @@
+.about-container {
+  height: 100vh;
+  display: flex;
+}
+
+.content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+.content h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1.5ren;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.content p {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.techstack {
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tech-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.techstack-group {
+  margin-top: 2rem;
+}
+
+.techstack-group-title {
+  font-size: 1.4rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+}
+
+.more-info {
+  color: #aaa;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.more-info a {
+  color: #bbb;
+  text-decoration: none;
+  font-family: monospace;
+  margin: 0 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.more-info a:hover {
+  color: #ddd;
+  text-shadow: 0 0 4px #ccc;
+}
