@@ -6,9 +6,10 @@ import {
   SiPytorch,
   SiTensorflow,
   SiReact,
-  SiVite,
   SiGit,
   SiLatex,
+  SiLinux,
+  SiHuggingface,
 } from 'react-icons/si';
 
 import { TechItem } from '@/types';
@@ -26,9 +27,10 @@ const techStack: Record<string, TechItem[]> = {
     { name: 'React', Icon: SiReact, category: 'Library' },
   ],
   Tooling: [
-    { name: 'Vite', Icon: SiVite, category: 'Tooling' },
     { name: 'Git', Icon: SiGit, category: 'Version Control' },
     { name: 'LaTeX', Icon: SiLatex, category: 'Tooling' },
+    { name: 'Linux', Icon: SiLinux, category: 'Operating System' },
+    { name: 'Hugging Face', Icon: SiHuggingface, category: 'Platform' },
   ],
 };
 
