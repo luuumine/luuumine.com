@@ -19,8 +19,7 @@ function Contact() {
           <p>Got a question, an idea, or just feel like saying hi? Feel free to reach out.</p>
           <ul className='contact-links'>
             <li>
-              <GrMail size={20} />{' '}
-              <a href='mailto:romain.delhommais@gmail.com'>romain.delhommais@gmail.com</a>
+              <GrMail size={20} /> <a href='mailto:romain@delhommais.com'>romain@delhommais.com</a>
             </li>
             <li>
               <GrLinkedin size={20} />{' '}
