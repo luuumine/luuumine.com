@@ -1,9 +1,8 @@
 {
-  "semi": true,
-  "singleQuote": true,
-  "jsxSingleQuote": true,
-  "trailingComma": "es5",
-  "printWidth": 100,
+  "plugins": ["prettier-plugin-astro"],
   "tabWidth": 2,
-  "useEditorConfig": false
+  "useTabs": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "semi": true
 }
