@@ -1,20 +1,22 @@
 {
-  "name": "delhommais.com",
-  "type": "module",
-  "engines": {
-    "node": ">=22 <23"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.12.9"
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1"
-  }
+	"name": "delhommais.com",
+	"version": "2.0.0",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=22 <23"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^5.12.9"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1"
+	}
 }
