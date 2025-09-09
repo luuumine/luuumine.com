@@ -1,15 +1,17 @@
 ---
+import { Image } from "astro:assets";
+
 import Navbar from "./navbar.astro";
-import img1x from "../assets/isla-100.png";
-import img2x from "../assets/isla-200.png";
+import isla from "../assets/isla.png";
 ---
 
 <header class="site-header">
 	<Navbar />
-	<img
+	<Image
 		class="header-img"
-		src={img1x.src}
-		srcset={`${img1x.src} 1x, ${img2x.src} 2x`}
-		alt="Isla"
+		src={isla}
+		alt=""
+		widths={[100, 200]}
+		sizes="100px"
 	/>
 </header>
