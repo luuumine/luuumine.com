@@ -1,10 +1,60 @@
 ---
 import Base from "../layouts/base.astro";
 
+import "../styles/cv.css";
+
 const pageTitle = "CV";
+
+type SocialLink = {
+	name: string;
+	label: string;
+	url: string;
+};
+
+const socials: SocialLink[] = [
+	{
+		name: "email",
+		label: "romain@delhommais.com",
+		url: "mailto:romain@delhommais.com",
+	},
+	{
+		name: "github",
+		label: "GitHub",
+		url: "https://github.com/luuumine",
+	},
+	{
+		name: "linkedin",
+		label: "LinkedIn",
+		url: "https://www.linkedin.com/in/romain-delhommais/",
+	},
+];
 ---
 
 <Base title={pageTitle}>
-	<h1>{pageTitle}</h1>
-	<p>coming soon...</p>
+	<main class="cv">
+		<h1>Romain Delhommais</h1>
+		<p class="links">
+			{
+				socials.map((s, i) => (
+					<>
+						<a
+							href={s.url}
+							target={s.url.startsWith("http") ? "_blank" : undefined}
+							rel="noopener noreferrer">
+							{s.label}
+						</a>
+						{i < socials.length - 1 ? <span class="sep">|</span> : ""}
+					</>
+				))
+			}
+		</p>
+		<p class="download">
+			[ <a
+				href="/romain_delhommais_cv.pdf"
+				target="_blank"
+				rel="noopener noreferrer">
+				View my CV
+			</a> ]
+		</p>
+	</main>
 </Base>
