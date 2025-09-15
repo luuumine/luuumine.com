@@ -85,37 +85,6 @@ a:hover {
 	color: var(--secondary);
 }
 
-/* navbar */
-.nav {
-	font-size: 1.25rem;
-	height: 3rem;
-	display: flex;
-	gap: 1.25rem;
-	align-items: center;
-	border-bottom: 1px solid var(--line);
-}
-
-.nav ul {
-	display: flex;
-	gap: 1rem;
-	margin: 0;
-	padding: 0;
-}
-
-.nav li {
-	margin: 0;
-}
-
-/* nav links */
-.nav a {
-	color: var(--primary);
-	font-weight: 500;
-}
-
-.nav a:hover {
-	color: var(--secondary);
-}
-
 /* header */
 .site-header {
 	display: flex;
