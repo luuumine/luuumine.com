@@ -68,6 +68,10 @@ p {
 	color: var(--fg);
 }
 
+.highlight {
+	color: var(--primary);
+}
+
 /* lists */
 ul,
 ol {
