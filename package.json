@@ -1,10 +1,10 @@
 {
-	"name": "delhommais.com",
-	"version": "2.3.0",
+	"name": "luuumine.com",
+	"version": "3.0.0",
 	"private": true,
 	"type": "module",
 	"engines": {
-		"node": ">=22 <23"
+		"node": ">=22.0.0"
 	},
 	"scripts": {
 		"dev": "astro dev",
