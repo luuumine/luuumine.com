@@ -7,51 +7,51 @@ const pageTitle = "computer";
 ---
 
 <Base title={pageTitle}>
-	<h1>{pageTitle}</h1>
-	<p>
-		this page is where i keep track of the computers i use, mainly my laptop and
-		my server.
-	</p>
-	<p>
-		right now this setup is enough for my needs but i'm planning to upgrade the
-		server's storage and specs to allow transcoding and running llms at home.
-	</p>
-	<div id="computer-accordion">
-		{
-			sections.map((section, i) => (
-				<details {...(i === 0 ? { open: true } : {})}>
-					<summary>{section.title}</summary>
-					<ul>
-						{section.specs.map((item) => (
-							<li>
-								{item.key}:{" "}
-								{Array.isArray(item.value)
-									? item.value.join(" · ")
-									: item.value}
-							</li>
-						))}
-					</ul>
-					<p>{section.note}</p>
-				</details>
-			))
-		}
-	</div>
+  <h1>{pageTitle}</h1>
+  <p>
+    this page is where i keep track of the computers i use, mainly my laptop and
+    my server.
+  </p>
+  <p>
+    right now this setup is enough for my needs but i'm planning to upgrade the
+    server's storage and specs to allow transcoding and running llms at home.
+  </p>
+  <div id="computer-accordion">
+    {
+      sections.map((section, i) => (
+        <details {...(i === 0 ? { open: true } : {})}>
+          <summary>{section.title}</summary>
+          <ul>
+            {section.specs.map((item) => (
+              <li>
+                {item.key}:{" "}
+                {Array.isArray(item.value)
+                  ? item.value.join(" · ")
+                  : item.value}
+              </li>
+            ))}
+          </ul>
+          <p>{section.note}</p>
+        </details>
+      ))
+    }
+  </div>
 </Base>
 
 <script type="module">
-	const root = document.querySelector("#computer-accordion");
-	if (root && !root.hasAttribute("data-init")) {
-		root.setAttribute("data-init", "");
-		root.addEventListener(
-			"toggle",
-			(e) => {
-				const t = e.target;
-				if (!(t instanceof HTMLDetailsElement) || !t.open) return;
-				root.querySelectorAll("details[open]").forEach((d) => {
-					if (d !== t) d.open = false;
-				});
-			},
-			true,
-		);
-	}
+  const root = document.querySelector("#computer-accordion");
+  if (root && !root.hasAttribute("data-init")) {
+    root.setAttribute("data-init", "");
+    root.addEventListener(
+      "toggle",
+      (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLDetailsElement) || !t.open) return;
+        root.querySelectorAll("details[open]").forEach((d) => {
+          if (d !== t) d.open = false;
+        });
+      },
+      true,
+    );
+  }
 </script>

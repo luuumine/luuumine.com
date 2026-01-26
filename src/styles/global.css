@@ -3,113 +3,113 @@
 
 /* theme */
 :root {
-	/* surface + text */
-	--bg: ghostwhite;
-	--fg: #4a4a4a; /* light gray text */
-	--muted: #6a6a6a;
+  /* surface + text */
+  --bg: ghostwhite;
+  --fg: #4a4a4a; /* light gray text */
+  --muted: #6a6a6a;
 
-	/* main color */
-	--primary: hotpink;
-	--secondary: purple;
+  /* main color */
+  --primary: hotpink;
+  --secondary: purple;
 
-	/* lines */
-	--line: #e8e2d9;
+  /* lines */
+  --line: #e8e2d9;
 }
 
 /* reset & base */
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-	margin: 0;
-	background: var(--bg);
-	color: var(--fg);
-	font: 16px/1.6 "Inter";
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 "Inter";
 }
 
 /* centered box */
 .page {
-	width: 100%;
-	max-width: 648px;
-	margin: 2rem auto;
-	min-height: 100vh;
-	padding: 18px;
-	background: var(--bg);
+  width: 100%;
+  max-width: 648px;
+  margin: 2rem auto;
+  min-height: 100vh;
+  padding: 18px;
+  background: var(--bg);
 }
 
 /* main content */
 main {
-	display: block;
-	margin: 0 0;
+  display: block;
+  margin: 0 0;
 }
 
 /* headings */
 h1 {
-	font-size: 1.75rem;
-	line-height: 2rem;
-	font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 700;
 }
 
 h2 {
-	font-size: 1.25rem;
-	line-height: 1.35;
-	margin: 1.25rem 0 0.5rem;
-	font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 600;
 }
 
 p {
-	margin: 0 0 1rem;
-	color: var(--fg);
+  margin: 0 0 1rem;
+  color: var(--fg);
 }
 
 .highlight {
-	color: var(--primary);
+  color: var(--primary);
 }
 
 /* lists */
 ul,
 ol {
-	list-style: none;
-	margin: 0 0 1rem;
-	padding-left: 0;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding-left: 0;
 }
 
 /* links */
 a {
-	color: var(--primary);
-	text-decoration: none;
+  color: var(--primary);
+  text-decoration: none;
 }
 a:hover {
-	color: var(--secondary);
+  color: var(--secondary);
 }
 
 /* header */
 .site-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
 }
 
 .header-img {
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 @media (max-width: 600px) {
-	.header-img {
-		display: none; /* do not display the image on small screens */
-	}
+  .header-img {
+    display: none; /* do not display the image on small screens */
+  }
 }
 
 /* stub */
 .stub p {
-	color: var(--muted);
+  color: var(--muted);
 }
