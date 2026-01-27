@@ -3,6 +3,8 @@ import Base from "../layouts/Base.astro";
 
 import { sections } from "../data/computer.ts";
 
+import "../styles/computer.css";
+
 const pageTitle = "computer";
 ---
 
@@ -16,15 +18,28 @@ const pageTitle = "computer";
     right now this setup is enough for my needs but i'm planning to upgrade the
     server's storage and specs to allow transcoding and running llms at home.
   </p>
-  <div id="computer-accordion">
+  <div class="tab-nav">
     {
       sections.map((section, i) => (
-        <details {...(i === 0 ? { open: true } : {})}>
-          <summary>{section.title}</summary>
+        <button
+          class:list={["nav-item", { active: i === 0 }]}
+          data-tab={i}
+          type="button">
+          {section.title}
+        </button>
+      ))
+    }
+  </div>
+  <div class="tab-content-container">
+    {
+      sections.map((section, i) => (
+        <div
+          id={"tab-content-" + i}
+          class:list={["tab-pane", { hidden: i !== 0 }]}>
           <ul>
             {section.specs.map((item) => (
               <li>
-                {item.key}:{" "}
+                <strong>{item.key}:</strong>{" "}
                 {Array.isArray(item.value)
                   ? item.value.join(" · ")
                   : item.value}
@@ -32,26 +47,29 @@ const pageTitle = "computer";
             ))}
           </ul>
           <p>{section.note}</p>
-        </details>
+        </div>
       ))
     }
   </div>
 </Base>
 
-<script type="module">
-  const root = document.querySelector("#computer-accordion");
-  if (root && !root.hasAttribute("data-init")) {
-    root.setAttribute("data-init", "");
-    root.addEventListener(
-      "toggle",
-      (e) => {
-        const t = e.target;
-        if (!(t instanceof HTMLDetailsElement) || !t.open) return;
-        root.querySelectorAll("details[open]").forEach((d) => {
-          if (d !== t) d.open = false;
-        });
-      },
-      true,
-    );
-  }
+<script>
+  const buttons = document.querySelectorAll(".nav-item");
+  const panes = document.querySelectorAll(".tab-pane");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.classList.contains("active")) return;
+
+      // Reset all buttons and panes
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      panes.forEach((pane) => pane.classList.add("hidden"));
+
+      // Activate the clicked one
+      button.classList.add("active");
+      const tabId = button.getAttribute("data-tab"); // "0", "1", ..
+      const targetPane = document.getElementById("tab-content-" + tabId);
+      targetPane?.classList.remove("hidden");
+    });
+  });
 </script>
