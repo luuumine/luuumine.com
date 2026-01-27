@@ -19,6 +19,7 @@
           typescript
           astro-language-server
           nodePackages.typescript-language-server
+          vscode-langservers-extracted # CSS, HTML, JSON, MD
         ];
 
         shellHook = ''
