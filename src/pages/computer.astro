@@ -54,22 +54,24 @@ const pageTitle = "computer";
 </Base>
 
 <script>
-  const buttons = document.querySelectorAll(".nav-item");
-  const panes = document.querySelectorAll(".tab-pane");
+  document.addEventListener("astro:page-load", () => {
+    const buttons = document.querySelectorAll(".nav-item");
+    const panes = document.querySelectorAll(".tab-pane");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.classList.contains("active")) return;
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.classList.contains("active")) return;
 
-      // Reset all buttons and panes
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      panes.forEach((pane) => pane.classList.add("hidden"));
+        // Reset all buttons and panes
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        panes.forEach((pane) => pane.classList.add("hidden"));
 
-      // Activate the clicked one
-      button.classList.add("active");
-      const tabId = button.getAttribute("data-tab"); // "0", "1", ..
-      const targetPane = document.getElementById("tab-content-" + tabId);
-      targetPane?.classList.remove("hidden");
+        // Activate the clicked one
+        button.classList.add("active");
+        const tabId = button.getAttribute("data-tab"); // "0", "1", ..
+        const targetPane = document.getElementById("tab-content-" + tabId);
+        targetPane?.classList.remove("hidden");
+      });
     });
   });
 </script>
