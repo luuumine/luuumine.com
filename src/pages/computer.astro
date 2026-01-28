@@ -5,18 +5,21 @@ import { sections } from "../data/computer.ts";
 
 import "../styles/computer.css";
 
+const dotfilesLink = "https://github.com/luuumine/nixos";
 const pageTitle = "computer";
 ---
 
 <Base title={pageTitle}>
   <h1>{pageTitle}</h1>
   <p>
-    this page is where i keep track of the computers i use, mainly my laptop and
-    my server.
+    this page is where i keep track of the computers i use. my main setup is
+    currently split between my desktop and my home server.
   </p>
   <p>
-    right now this setup is enough for my needs but i'm planning to upgrade the
-    server's storage and specs to allow transcoding and running llms at home.
+    i am slowly migrating everything to <span class="highlight">NixOS</span> (especially
+    the server, which i plan to upgrade and switch over soon). you can find my config
+    and dotfiles
+    <a href={dotfilesLink} target="_blank">here</a>.
   </p>
   <div class="tab-nav">
     {
