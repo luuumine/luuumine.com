@@ -1,30 +1,8 @@
 # build output
 dist/
 
-# Local fonts
-fonts/
-
-# cache files
-.eslintcache
-
-# generated types
+# astro cache
 .astro/
 
 # dependencies
 node_modules/
-
-# vscode
-.vscode/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
-.DS_Store
