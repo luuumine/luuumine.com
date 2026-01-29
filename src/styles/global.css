@@ -9,16 +9,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Inter Variable";
-  src:
-    url("/fonts/InterVariable-Italic.woff2") format("woff2-variations"),
-    url("/fonts/InterVariable-Italic.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-}
-
 /* theme */
 :root {
   /* font */
