@@ -1,24 +1,24 @@
 {
-	"name": "luuumine.com",
-	"version": "3.0.1",
-	"private": true,
-	"type": "module",
-	"engines": {
-		"node": ">=22.0.0"
-	},
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"astro": "^5.14.1",
-		"sharp": "^0.34.5",
-		"typescript": "^5.9.3"
-	},
-	"devDependencies": {
-		"prettier": "^3.6.2",
-		"prettier-plugin-astro": "^0.14.1"
-	}
+  "name": "luuumine.com",
+  "version": "3.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.14.1",
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
 }
