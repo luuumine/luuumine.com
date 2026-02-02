@@ -4,7 +4,22 @@
   border-top: 1px solid var(--line);
 }
 
+.site-footer .badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-footer .badges img {
+  width: 88px;
+  height: 31px;
+  display: block;
+  image-rendering: crisp-edges;
+}
+
 .copyright {
-  margin: 0.25rem 0;
+  margin: 1rem 0;
   text-align: center;
 }
