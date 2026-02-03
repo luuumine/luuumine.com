@@ -22,7 +22,8 @@
 /* nav links */
 .nav a {
   color: var(--primary);
-  font-weight: 500;
+  transition: color 0.3s;
+  font-weight: 600;
 }
 
 .nav a:hover {
@@ -30,6 +31,6 @@
 }
 
 .nav a.active {
-  font-weight: 600;
+  color: var(--primary);
   border-bottom: 2px solid var(--primary);
 }
