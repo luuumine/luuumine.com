@@ -5,6 +5,7 @@ import quintuplets from "../assets/likes/quintuplets.webp";
 import pancreas from "../assets/likes/pancreas.webp";
 import gu1t4r from "../assets/likes/gu1t4r.webp";
 import taylorSwift from "../assets/likes/taylor_swift.webp";
+import yoshi from "../assets/likes/yoshi.webp";
 
 export type LikeItem = {
   name: string;
@@ -43,13 +44,18 @@ export const likesData: LikeCategory[] = [
     items: [
       {
         name: "GU1T4R",
-        url: "https://www.last.fm/music/GU1T4R",
+        url: "https://open.spotify.com/artist/0Waq0e4oiQxOvsfoAiOIC5",
         image: gu1t4r,
       },
       {
         name: "Taylor Swift",
-        url: "https://www.last.fm/music/Taylor+Swift",
+        url: "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02",
         image: taylorSwift,
+      },
+      {
+        name: "y0shi.mp3",
+        url: "https://open.spotify.com/artist/0d8WAAF87lV4Me7E1f2Luj",
+        image: yoshi,
       },
     ],
   },
