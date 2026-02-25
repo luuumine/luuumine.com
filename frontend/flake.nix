@@ -23,11 +23,11 @@
         ];
 
         shellHook = ''
-          echo "Astro Development Environment Active"
-          if [ ! -d "node_modules" ]; then
+          if [ -f "package.json" ]; then
             pnpm install
           fi
           export PATH="$PWD/node_modules/.bin:$PATH"
+          echo "Astro Development Environment Active"
         '';
       };
     };
