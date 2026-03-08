@@ -48,9 +48,6 @@ export async function getCurrentlyPlaying(): Promise<NowPlayingResponse> {
         break;
       }
       case 204:
-        // Nothing has been playing for a while..
-        console.log("204!");
-        console.log(response);
         break;
       case 401: {
         console.error("Spotify token expired");
