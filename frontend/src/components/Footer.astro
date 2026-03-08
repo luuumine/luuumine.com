@@ -2,10 +2,22 @@
 import NowPlaying from "../components/NowPlaying.astro";
 
 import "../styles/footer.css";
+
+const username = "luuumine";
+const logo = "/nixos-rainbow.svg";
 ---
 
 <footer class="site-footer">
   <NowPlaying />
+
+  <div class="nix-webring">
+    <a href={`https://nixwebr.ing/prev/${username}`}>prev</a>
+    <a href="https://nixwebr.ing" class="nix-home">
+      <img src={logo} alt="Nix Webring" width={48} height={48} />
+    </a>
+    <a href={`https://nixwebr.ing/next/${username}`}>next</a>
+  </div>
+
   <div class="badges">
     <a href="https://www.kernel.org/" target="_blank">
       <img src="/badges/linux.webp" alt="Linux badge" width={88} height={31} />
