@@ -2,7 +2,7 @@ import { getAccessToken } from "./access_token.ts";
 
 let cachedMusicData: any = null;
 let cachedMusicExpirationEpoch = 0;
-let CACHE_TTL = 1000 * 15;
+let CACHE_TTL = 1000 * 5;
 
 export type NowPlayingResponse =
   | { isPlaying: false }

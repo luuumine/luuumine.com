@@ -24,7 +24,7 @@ import "../styles/nowPlaying.css";
         songUrl: string;
       };
 
-  const CACHE_TTL = 20 * 1000;
+  const CACHE_TTL = 1000 * 3;
   const API_URL = import.meta.env.PUBLIC_API_URL;
   const formatter = new Intl.ListFormat("en", {
     style: "short",
