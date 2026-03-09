@@ -16,7 +16,7 @@ Bun.serve({
     const handler = routes[url.pathname];
 
     if (!handler) {
-      console.log(
+      console.warn(
         `[${new Date().toISOString()}] ${method} ${url.pathname} -> 404`,
       );
       return new Response("Not Found", { status: 404 });
@@ -24,9 +24,13 @@ Bun.serve({
 
     try {
       const response = await handler(req);
-      console.log(
-        `[${new Date().toISOString()}] ${method} ${url.pathname} -> ${response.status}`,
-      );
+
+      if (response.status !== 200) {
+        console.warn(
+          `[${new Date().toISOString()}] ${method} ${url.pathname} -> ${response.status}`,
+        );
+      }
+
       return response;
     } catch (err) {
       console.error(
