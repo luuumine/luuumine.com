@@ -18,6 +18,7 @@
   --bg: ghostwhite;
   --fg: #4a4a4a; /* light gray text */
   --muted: #6a6a6a;
+  --bg-highlight: lavenderblush;
 
   /* main color */
   --primary: mediumvioletred;
@@ -77,7 +78,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.2rem;
   font-weight: 600;
 }
