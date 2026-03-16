@@ -19,7 +19,7 @@ const pageTitle = "likes";
         <h2 class="category-title">{category.title}</h2>
         <div class="category-grid">
           {category.items.map((item) => (
-            <a class="like-card" href={item.url} target="_blank">
+            <a class="like-card" href={item.url} target="_blank" rel="noopener">
               <Image
                 src={item.image}
                 alt={item.name}
