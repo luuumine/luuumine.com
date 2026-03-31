@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { socials } from "../data/socials";
+
+import "../styles/socialRow.css";
+---
+
+<div class="social-row">
+  {
+    socials.map((social) => {
+      const content =
+        social.visual.kind === "icon" ? (
+          <Icon class="icon" name={social.visual.value} />
+        ) : (
+          <span class="icon char-icon">{social.visual.value}</span>
+        );
+
+      const tooltipText = `${social.label}: ${social.username}`;
+
+      return social.hasLink ? (
+        <a
+          class="social-link"
+          href={`/socials/${social.path}`}
+          target="_blank"
+          rel="noopener"
+          style={`--social-color:${social.color};`}>
+          <span class="tooltip">{tooltipText}</span>
+          {content}
+        </a>
+      ) : (
+        <button
+          class="social-link social-copy"
+          type="button"
+          data-copy={social.url}
+          data-text={tooltipText}
+          style={`--social-color:${social.color};`}>
+          <span class="tooltip">{tooltipText}</span>
+          {content}
+        </button>
+      );
+    })
+  }
+</div>
+
+<script>
+  const copyButtons =
+    document.querySelectorAll<HTMLButtonElement>(".social-copy");
+
+  copyButtons.forEach((button) => {
+    let timeout: number;
+
+    button.addEventListener("click", async () => {
+      const { copy, text } = button.dataset;
+      const tip = button.querySelector(".tooltip");
+
+      if (!copy || !text || !tip) return;
+
+      try {
+        await navigator.clipboard.writeText(copy);
+
+        clearTimeout(timeout);
+
+        tip.textContent = "copied!";
+
+        timeout = window.setTimeout(() => {
+          tip.textContent = text;
+        }, 1000);
+      } catch (err) {
+        console.error("Failed to copy: ", err);
+      }
+    });
+  });
+</script>

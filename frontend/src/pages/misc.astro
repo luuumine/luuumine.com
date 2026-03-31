@@ -1,11 +1,29 @@
 ---
 import Base from "../layouts/Base.astro";
-import Stub from "../components/Stub.astro";
+
+import SocialRow from "../components/SocialRow.astro";
+
+import "../styles/misc.css";
 
 const pageTitle = "misc";
 ---
 
 <Base title={pageTitle}>
   <h1>{pageTitle}</h1>
-  <Stub />
+  here are things that didn't fit on other pages.
+  <section>
+    <h2 class="category-title">socials</h2>
+    <SocialRow />
+  </section>
+  <section>
+    <h2 class="category-title">more</h2>
+    <ul class="misc-pages">
+      <li>
+        <a class="misc-page-link" href="/misc/encryption">encryption</a>
+        <span class="misc-page-note">
+          why privacy matters, my public keys, and how to encrypt files to me.
+        </span>
+      </li>
+    </ul>
+  </section>
 </Base>
