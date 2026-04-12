@@ -1,4 +1,6 @@
 ---
+import ThemeButton from "./ThemeButton.astro";
+
 import "../styles/navbar.css";
 
 type Link = {
@@ -34,5 +36,6 @@ const current = Astro.url.pathname;
         </li>
       ))
     }
+    <li><ThemeButton /></li>
   </ul>
 </nav>
