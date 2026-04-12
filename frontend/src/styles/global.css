@@ -11,21 +11,28 @@
 
 /* theme */
 :root {
-  /* font */
   --font-main: "Inter Variable", sans-serif;
+  --line: #e8e2d9;
+}
 
-  /* surface + text */
+:root[data-theme="light"] {
   --bg: ghostwhite;
-  --fg: #4a4a4a; /* light gray text */
+  --fg: #4a4a4a;
   --muted: #6a6a6a;
   --bg-highlight: lavenderblush;
 
-  /* main color */
   --primary: mediumvioletred;
   --secondary: purple;
+}
 
-  /* lines */
-  --line: #e8e2d9;
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --fg: #e0e0e0;
+  --muted: #888888;
+  --bg-highlight: purple;
+
+  --primary: hotpink;
+  --secondary: mediumvioletred;
 }
 
 /* reset & base */

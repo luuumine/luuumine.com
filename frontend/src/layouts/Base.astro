@@ -23,6 +23,16 @@ const username = "lumine";
 
     <ClientRouter />
 
+    <script is:inline>
+      const theme = (() => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+
     <link
       rel="preload"
       href="/fonts/InterVariable.tiny.woff2"
