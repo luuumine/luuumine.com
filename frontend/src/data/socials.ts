@@ -10,7 +10,7 @@ export type SocialItem = {
   path: string;
   url: string;
   hasLink: boolean;
-  color: string;
+  color: { light: string; dark: string };
 };
 
 export const socials: SocialItem[] = [
@@ -22,7 +22,7 @@ export const socials: SocialItem[] = [
     path: "email",
     url: "hello@luuumine.com",
     hasLink: false,
-    color: "mediumvioletred",
+    color: { light: "mediumvioletred", dark: "hotpink" },
   },
   {
     id: "github",
@@ -32,7 +32,7 @@ export const socials: SocialItem[] = [
     path: "github",
     url: "https://github.com/luuumine",
     hasLink: true,
-    color: "#000000",
+    color: { light: "#000000", dark: "#FFFFFF" },
   },
   {
     id: "discord",
@@ -42,7 +42,7 @@ export const socials: SocialItem[] = [
     path: "discord",
     url: "https://discord.com/users/342580083162087425",
     hasLink: true,
-    color: "#5865F2",
+    color: { light: "#5865F2", dark: "#5865F2" },
   },
   {
     id: "signal",
@@ -52,7 +52,7 @@ export const socials: SocialItem[] = [
     path: "signal",
     url: "https://signal.me/#eu/KHAXJodtrJspzly3TI77e2q8nGleCOSeubR0I_X7KbMcTLFebjRJBZaS6Rdue1Y2",
     hasLink: true,
-    color: "#3A76F0",
+    color: { light: "#3A76F0", dark: "#3A76F0" },
   },
   {
     id: "telegram",
@@ -62,7 +62,7 @@ export const socials: SocialItem[] = [
     path: "telegram",
     url: "https://t.me/telumine",
     hasLink: true,
-    color: "#26A5E4",
+    color: { light: "#26A5E4", dark: "#26A5E4" },
   },
   {
     id: "spotify",
@@ -72,7 +72,7 @@ export const socials: SocialItem[] = [
     path: "spotify",
     url: "https://open.spotify.com/user/31wdabke5p37rfvwkwpyijsm2ywq",
     hasLink: true,
-    color: "#1DB964",
+    color: { light: "#1DB964", dark: "#1DB964" },
   },
   {
     id: "steam",
@@ -82,7 +82,7 @@ export const socials: SocialItem[] = [
     path: "steam",
     url: "https://steamcommunity.com/id/Luuumine_",
     hasLink: true,
-    color: "#061E52",
+    color: { light: "#061E52", dark: "ghostwhite" },
   },
   {
     id: "anilist",
@@ -92,7 +92,7 @@ export const socials: SocialItem[] = [
     path: "anilist",
     url: "https://anilist.co/user/160300",
     hasLink: true,
-    color: "#C063FF",
+    color: { light: "#C063FF", dark: "#C063FF" },
   },
   {
     id: "mangacollec",
@@ -102,6 +102,6 @@ export const socials: SocialItem[] = [
     path: "mangacollec",
     url: "https://www.mangacollec.com/user/luuumine/collection",
     hasLink: true,
-    color: "#FC3117",
+    color: { light: "#FC3117", dark: "#FC3117" },
   },
 ];

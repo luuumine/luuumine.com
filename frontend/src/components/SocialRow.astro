@@ -18,13 +18,15 @@ import "../styles/socialRow.css";
 
       const tooltipText = `${social.label}: ${social.username}`;
 
+      const themeStyles = `--social-color-light: ${social.color.light}; --social-color-dark: ${social.color.dark};`;
+
       return social.hasLink ? (
         <a
           class="social-link"
           href={`/socials/${social.path}`}
           target="_blank"
           rel="noopener"
-          style={`--social-color:${social.color};`}>
+          style={themeStyles}>
           <span class="tooltip">{tooltipText}</span>
           {content}
         </a>
@@ -34,7 +36,7 @@ import "../styles/socialRow.css";
           type="button"
           data-copy={social.url}
           data-text={tooltipText}
-          style={`--social-color:${social.color};`}>
+          style={themeStyles}>
           <span class="tooltip">{tooltipText}</span>
           {content}
         </button>
