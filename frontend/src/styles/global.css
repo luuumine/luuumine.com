@@ -116,28 +116,3 @@ a {
 a:hover {
   color: var(--secondary);
 }
-
-/* header */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1rem 0;
-}
-
-.header-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .header-img {
-    display: none; /* do not display the image on small screens */
-  }
-}
-
-/* stub */
-.stub p {
-  color: var(--muted);
-}
