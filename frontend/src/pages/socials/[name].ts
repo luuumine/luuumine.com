@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { socials } from "../../data/socials";
+import { socials } from "@/data/socials";
 
 export function getStaticPaths() {
   return socials

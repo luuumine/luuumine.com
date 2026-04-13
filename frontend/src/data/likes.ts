@@ -1,11 +1,11 @@
 import type { ImageMetadata } from "astro";
 
-import plasticMemories from "../assets/likes/plastic_memories.webp";
-import quintuplets from "../assets/likes/quintuplets.webp";
-import pancreas from "../assets/likes/pancreas.webp";
-import gu1t4r from "../assets/likes/gu1t4r.webp";
-import taylorSwift from "../assets/likes/taylor_swift.webp";
-import yoshi from "../assets/likes/yoshi.webp";
+import plasticMemories from "@/assets/likes/plastic_memories.webp";
+import quintuplets from "@/assets/likes/quintuplets.webp";
+import pancreas from "@/assets/likes/pancreas.webp";
+import gu1t4r from "@/assets/likes/gu1t4r.webp";
+import taylorSwift from "@/assets/likes/taylor_swift.webp";
+import yoshi from "@/assets/likes/yoshi.webp";
 
 export type LikeItem = {
   name: string;
