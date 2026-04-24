@@ -12,6 +12,52 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      packages.${system} = {
+        frontend = pkgs.stdenv.mkDerivation {
+          pname = "luuumine-frontend";
+          version = "3.5.0";
+          src = ./frontend;
+
+          nativeBuildInputs = [
+            pkgs.nodejs_22
+            pkgs.pnpmConfigHook
+            pkgs.pnpm
+          ];
+
+          pnpmDeps = pkgs.fetchPnpmDeps {
+            inherit (self.packages.${system}.frontend) pname version src;
+            fetcherVersion = 3;
+            hash = "sha256-I+KJgI5ab+iitxP418+HV0Ki07AeE+TBNzpf/szJ/N8=";
+          };
+
+          buildPhase = "pnpm build";
+          installPhase = "cp -r dist $out";
+        };
+
+        backend = pkgs.stdenv.mkDerivation {
+          pname = "luuumine-backend";
+          version = "1.0.0";
+          src = ./backend;
+
+          nativeBuildInputs = [
+            pkgs.nodejs_22
+            pkgs.pnpmConfigHook
+            pkgs.pnpm
+          ];
+
+          pnpmDeps = pkgs.fetchPnpmDeps {
+            inherit (self.packages.${system}.backend) pname version src;
+            fetcherVersion = 3;
+            hash = "sha256-dMzr5LUT8c85kgncKSTmNU9ZHt3CG0ngEZtYIjv9AHI=";
+          };
+
+          installPhase = ''
+            mkdir -p $out
+            cp -r . $out/
+          '';
+        };
+      };
+
       devShells.${system} = {
         backend = pkgs.mkShell {
           packages = [
