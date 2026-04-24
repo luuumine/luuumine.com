@@ -67,6 +67,46 @@
         };
       };
 
+      nixosModules.default =
+        {
+          config,
+          lib,
+          pkgs,
+          ...
+        }:
+        let
+          cfg = config.services.luuumine-backend;
+          backendPkg = self.packages.${pkgs.stdenv.hostPlatform.system}.backend;
+        in
+        {
+          options.services.luuumine-backend = {
+            enable = lib.mkEnableOption "luuumine.com backend service";
+            port = lib.mkOption {
+              type = lib.types.port;
+              default = 3000;
+            };
+            envFile = lib.mkOption {
+              type = lib.types.path;
+              description = "path to env file";
+            };
+          };
+
+          config = lib.mkIf cfg.enable {
+            systemd.services.luuumine-com-backend = {
+              description = "luuumine.com api";
+              after = [ "network.target" ];
+              wantedBy = [ "multi-user.target" ];
+              serviceConfig = {
+                DynamicUser = true;
+                Environment = "PORT=${toString cfg.port}";
+                EnvironmentFile = cfg.envFile;
+                ExecStart = "${backendPkg}/bin/luuumine-api";
+                Restart = "always";
+              };
+            };
+          };
+        };
+
       devShells.${system} = {
         backend = pkgs.mkShell {
           packages = [
