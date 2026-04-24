@@ -1,43 +1,33 @@
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
+
 import { handle as statusHandler } from "./status";
 import { handle as musicHandler } from "./music";
 
-type RouteHandler = (req: Request) => Response | Promise<Response>;
+const app = new Hono();
 
-const routes: Record<string, RouteHandler> = {
-  "/api/status": statusHandler,
-  "/api/music": musicHandler,
-};
+app.all("/api/status", async (c) => await statusHandler(c.req.raw));
+app.all("/api/music", async (c) => await musicHandler(c.req.raw));
 
-Bun.serve({
-  port: Bun.env.PORT || 3000,
-  async fetch(req) {
-    const url = new URL(req.url);
-    const method = req.method;
-    const handler = routes[url.pathname];
+app.notFound((c) => {
+  console.warn(
+    `[${new Date().toISOString()}] ${c.req.method} ${c.req.url} -> 404`,
+  );
+  return c.text("Not Found", 404);
+});
 
-    if (!handler) {
-      console.warn(
-        `[${new Date().toISOString()}] ${method} ${url.pathname} -> 404`,
-      );
-      return new Response("Not Found", { status: 404 });
-    }
+app.onError((err, c) => {
+  console.error(
+    `[${new Date().toISOString()}] Error handling ${c.req.url}`,
+    err,
+  );
+  return c.text("Internal Server Error", 500);
+});
 
-    try {
-      const response = await handler(req);
+const port = Number(process.env.PORT) || 3000;
+console.log(`Server is running on port ${port}`);
 
-      if (response.status !== 200) {
-        console.warn(
-          `[${new Date().toISOString()}] ${method} ${url.pathname} -> ${response.status}`,
-        );
-      }
-
-      return response;
-    } catch (err) {
-      console.error(
-        `[${new Date().toISOString()}] Error handling ${url.pathname}`,
-        err,
-      );
-      return new Response("Internal Server Error", { status: 500 });
-    }
-  },
+serve({
+  fetch: app.fetch,
+  port,
 });

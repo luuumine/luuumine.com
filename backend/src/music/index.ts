@@ -1,6 +1,6 @@
 import { getCurrentlyPlaying } from "./currently_playing.ts";
 
-export async function handle(): Promise<Response> {
+export async function handle(req: Request): Promise<Response> {
   const songData = await getCurrentlyPlaying();
 
   return Response.json(songData, {

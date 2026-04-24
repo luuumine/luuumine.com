@@ -15,8 +15,8 @@
       devShells.${system} = {
         backend = pkgs.mkShell {
           packages = [
-            pkgs.bun
             pkgs.nodejs_22
+            pkgs.pnpm
             pkgs.typescript
             pkgs.typescript-language-server
             pkgs.vscode-langservers-extracted
