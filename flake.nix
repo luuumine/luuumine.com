@@ -54,6 +54,15 @@
           installPhase = ''
             mkdir -p $out
             cp -r . $out/
+            mkdir -p $out/bin
+
+            cat <<EOF > $out/bin/luuumine-api
+            #!/bin/sh
+            cd $out
+            exec ${pkgs.tsx}/bin/tsx src/index.ts "\$@"
+            EOF
+
+            chmod +x $out/bin/luuumine-api
           '';
         };
       };
